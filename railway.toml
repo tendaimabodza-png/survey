@@ -1,0 +1,14 @@
+# Railway Configuration
+
+# Specify the project environment settings
+[env]
+  NODE_ENV = "production"
+
+# Define the build settings if necessary
+[build]
+  command = "npm install && npm run build"
+
+# Configurations for deployment
+[deploy]
+  command = "npm start"
+  output = "./build"
