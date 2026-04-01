@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Signup</title>
+    <script>
+        function validateForm() {
+            const password = document.getElementById('password').value;
+            const email = document.getElementById('email').value;
+            const whatsapp = document.getElementById('whatsapp').value;
+            const username = document.getElementById('username').value;
+            const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$/;
+
+            if (!passwordRegex.test(password)) {
+                alert('Password must be at least 8 characters long and include at least one uppercase letter, one lowercase letter, and one number.');
+                return false;
+            }
+
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert('Please enter a valid email address.');
+                return false;
+            }
+
+            const whatsappRegex = /^\+[0-9]{1,3}\s?[0-9]{4,14}$/;
+            if (!whatsappRegex.test(whatsapp)) {
+                alert('Please enter a valid WhatsApp number, starting with a country code.');
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <h1>Create a New Account</h1>
+    <form onsubmit="return validateForm()">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="whatsapp">WhatsApp Number:</label>
+        <input type="text" id="whatsapp" name="whatsapp" placeholder="e.g., +1234567890" required><br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <input type="submit" value="Sign Up">
+    </form>
+</body>
+</html>
