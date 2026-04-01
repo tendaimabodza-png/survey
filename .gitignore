@@ -1,0 +1,16 @@
+# Node.js
+node_modules/
+
+# Logs
+logs/
+*.log
+
+# dotenv environment variable file
+.env
+
+# Build output
+dist/
+
+# Miscellaneous
+.DS_Store
+Thumbs.db
